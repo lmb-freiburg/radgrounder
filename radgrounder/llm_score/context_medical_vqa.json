@@ -1,0 +1,92 @@
+[
+    {
+        "question" : "Which is bigger in this image, right kidney or liver?",
+        "canditate" : "Liver",
+        "reference" : "Liver",
+        "score" : 5
+    },
+    {
+        "question" : "What is the organ on the left side of this image?",
+        "canditate" : "Kidney",
+        "reference" : "Liver",
+        "score" : 1
+    },
+    {
+        "question" : "What modality is used to take this image?",
+        "canditate" : "CT",
+        "reference" : "X-Ray",
+        "score" : 1
+    },
+    {
+        "question" : "How many kidneys in this image?",
+        "canditate" : "Two",
+        "reference" : "2.0",
+        "score" : 5
+    },
+    {
+        "question" : "Where is/are the abnormality located?",
+        "canditate" : "Kidney",
+        "reference" : "Right kidney",
+        "score" : 4
+    },
+    {
+        "question" : "Approximately what are the dimensions of the adrenal metastasis?",
+        "canditate" : "3.5 × 2.8 cm",
+        "reference" : "4.5 x 3.2 cm",
+        "score" : 3
+    },    
+    {
+        "question" : "What is the approximate size of the largest metastasis?",
+        "canditate" : "2.1 cm",
+        "reference" : "2.4 cm",
+        "score" : 4
+    },
+    {
+        "question" : "What is the intensity of the enhancement observed in the lesions? ",
+        "canditate" : "Intense",
+        "reference" : "Intensely enhancing",
+        "score" : 5
+    },
+    {
+        "question" : "What is the approximate size of the visualized lymph node?",
+        "canditate" : "1.6 cm",
+        "reference" : "16 mm",
+        "score" : 5
+    },
+    {
+        "question" : "Are there any nodules in the right lung?",
+        "canditate" : "No",
+        "reference" : "The report does not mention findings in the right lung.",
+        "score" : 5
+    },
+    {
+        "question" : "What is the approximate size of the nodular density?",
+        "canditate" : "0.3 cm",
+        "reference" : "2mm",
+        "score" : 4
+    },
+    {
+        "question" : "Is there any abnormality noted in the left lung?",
+        "canditate" : "No",
+        "reference" : "Yes",
+        "score" : 1
+    },
+    {
+        "question" : "What is observed in the mediastinum?",
+        "canditate" : "Increased mediastinal lymph nodes",
+        "reference" : "An elongated mediastinal lymph node.",
+        "score" : 4
+    },
+    {
+        "question" : "Where is the increased FDG uptake located?",
+        "canditate" : "Left lower lobe",
+        "reference" : "Infra-iliacally on the left.",
+        "score" : 2
+    },
+    {
+        "question" : "What is the approximate size of the mass?",
+        "canditate" : "1.5 cm",
+        "reference" : "1.4 x 1.2 cm",
+        "score" : 3
+    }
+]

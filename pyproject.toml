@@ -1,0 +1,211 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "radgrounder"
+description = "Medical Vision-Language Model for Radiology Report Generation"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+version = "0.1.0"
+authors = [
+    {name = "RadGrounder Team"}
+]
+license = {text = "MIT"}
+keywords = [
+    "medical-ai", 
+    "radiology", 
+    "vision-language-model", 
+    "VLM", 
+    "medical-imaging", 
+    "CT", 
+    "MRI", 
+    "report-generation",
+    "german-nlp",
+    "paligemma"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+
+# Pinned to the exact stack the released checkpoints were trained/evaluated with.
+# vllm 0.9.2 hard-pins torch==2.7.0 (cu126 wheels are the PyPI default — no extra
+# index needed). The full transitive graph is locked in uv.lock.
+dependencies = [
+    # --- core ML stack (constraint-critical: keep mutually consistent) ---
+    "torch==2.7.0",
+    "torchvision==0.22.0",
+    "torchaudio==2.7.0",
+    "transformers==4.54.1",
+    "tokenizers==0.21.4",
+    "trl==0.20.0",
+    "peft==0.17.0",
+    "accelerate==1.9.0",
+    "datasets==4.0.0",
+    "sentence-transformers==5.0.0",
+    "xformers==0.0.30",
+    # NOTE: the LLM-as-judge (vLLM) runs in a SEPARATE env — see requirements-judge.txt.
+    # vllm 0.9.2 conflicts with transformers 4.54.1 (both register an `aimv2` config),
+    # and the segmentation model code requires transformers >= 4.54, so they can't
+    # share one environment. The judge is reached over HTTP (LLMScoreServer).
+    # --- segmentation ---
+    "monai==1.5.0",
+    "nibabel>=5.3.0",
+    # --- medical imaging / IO ---
+    "pydicom>=3.0.0",
+    "zstandard>=0.23.0",
+    # --- metrics / utils ---
+    "numpy==2.2.6",
+    "scipy>=1.15.0",
+    "pandas>=2.2.0",
+    "Pillow>=11.0.0",
+    "scikit-learn>=1.2.0",
+    "einops>=0.6.0",
+    "sentencepiece>=0.1.99",
+    "matplotlib>=3.5.0",
+    "highlight-text>=0.2",
+    "xmltodict>=0.14.0",
+    "tqdm>=4.64.0",
+    "wandb>=0.15.0",
+    "aiohttp>=3.9.0",
+    "requests>=2.28.0",
+    # --- text metrics (CIDEr/F1/accuracy) via OVQA ---
+    "ovqa",
+    # OVQA declares no dependencies upstream; these are what its metric modules need:
+    "pycocoevalcap==1.2",
+    "packg==0.33.14",
+    "visiontext==0.33.5",
+    "torchmetrics==1.7.4",
+    "nltk==3.9.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+]
+# Optional grounding DATASET GENERATION pipeline (radgrounder/dataset/segmentation/
+# grounding_pipeline/). Not needed to train or evaluate the released models — only to
+# build new grounding annotations from your own scans + reports. Heavy, hence opt-in:
+#   uv pip install -e ".[grounding]"   (or: uv sync --extra grounding)
+grounding = [
+    "opencv-python-headless>=4.8.0",   # connected-components bounding boxes (bbox_utils)
+    "TotalSegmentator>=2.4.0",          # 3D organ segmentation (step1); pulls nnU-Net/torch
+]
+
+[tool.uv]
+# monai 1.5.0 declares torch<2.7.0 but works fine with 2.7.0 (this is exactly the
+# combination the released checkpoints were trained/evaluated with). Force torch 2.7.0
+# across the whole graph, mirroring the original conda environment.
+override-dependencies = ["torch==2.7.0"]
+
+[tool.uv.sources]
+# OVQA provides the CIDEr / F1 / accuracy metric implementations used at eval time.
+# Vendored as a git submodule at ./ovqa and installed EDITABLE: upstream's packaging
+# uses `include = ["ovqa"]` (not "ovqa*"), so a normal wheel build drops subpackages
+# like `ovqa.metrics`. An editable path install exposes them correctly.
+# Run `git submodule update --init` (or clone with --recursive) before `uv sync`.
+ovqa = { path = "ovqa", editable = true }
+
+[project.urls]
+Homepage = "https://github.com/lmb-freiburg/RadGrounder"
+Repository = "https://github.com/lmb-freiburg/RadGrounder"
+Documentation = "https://github.com/lmb-freiburg/RadGrounder/blob/main/README.md"
+"Bug Tracker" = "https://github.com/lmb-freiburg/RadGrounder/issues"
+
+[tool.setuptools]
+zip-safe = false
+platforms = ["any"]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["radgrounder*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+radgrounder = ["**/*.md", "**/*.txt", "**/*.json", "**/*.yaml", "**/*.yml"]
+
+# ---------- black formatter
+[tool.black]
+line-length = 100
+target-version = ['py310']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+# ---------- isort
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+# ---------- pytest
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "gpu: marks tests that require GPU",
+    "integration: marks tests as integration tests",
+]
+
+# ---------- mypy
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "transformers.*",
+    "torch.*",
+    "torchvision.*",
+    "datasets.*",
+    "PIL.*",
+    "sklearn.*",
+    "matplotlib.*",
+    "seaborn.*",
+    "pydicom.*",
+    "zstandard.*",
+    "wandb.*",
+    "ray.*",
+    "deepspeed.*",
+    "peft.*",
+    "bitsandbytes.*",
+]
+ignore_missing_imports = true

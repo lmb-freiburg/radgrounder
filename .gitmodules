@@ -1,0 +1,3 @@
+[submodule "ovqa"]
+	path = ovqa
+	url = https://github.com/lmb-freiburg/ovqa.git

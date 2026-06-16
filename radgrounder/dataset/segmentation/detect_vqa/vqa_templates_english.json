@@ -1,0 +1,77 @@
+[
+    {
+        "question": "Is the {organ_name} present in the image?",
+        "answer": "Yes, the {organ_name} is present in the image.",
+        "question_type": "yes_no_affirmative"
+    },
+    {
+        "question": "Is the {organ_name} present in the image?",
+        "answer": "No, the {organ_name} is not present in the image.",
+        "question_type": "yes_no_negative"
+    },
+    {
+        "question": "Does this image contain the {organ_name}?",
+        "answer": "Yes, this image contains the {organ_name}.",
+        "question_type": "yes_no_affirmative"
+    },
+    {
+        "question": "Does this image contain the {organ_name}?",
+        "answer": "No, this image does not contain the {organ_name}.",
+        "question_type": "yes_no_negative"
+    },
+    {
+        "question": "Can you see the {organ_name} in this image?",
+        "answer": "Yes, the {organ_name} can be seen in this image.",
+        "question_type": "yes_no_affirmative"
+    },
+    {
+        "question": "Can you see the {organ_name} in this image?",
+        "answer": "No, the {organ_name} cannot be seen in this image.",
+        "question_type": "yes_no_negative"
+    },
+    {
+        "question": "Is {organ_name} visible in the image?",
+        "answer": "Yes, {organ_name} is visible in the image.",
+        "question_type": "yes_no_affirmative"
+    },
+    {
+        "question": "Is {organ_name} visible in the image?",
+        "answer": "No, {organ_name} is not visible in the image.",
+        "question_type": "yes_no_negative"
+    },
+    {
+        "question": "Is the {organ_name} identifiable in this medical image?",
+        "answer": "Yes, the {organ_name} is identifiable in this medical image.",
+        "question_type": "yes_no_affirmative"
+    },
+    {
+        "question": "Is the {organ_name} identifiable in this medical image?",
+        "answer": "No, the {organ_name} is not identifiable in this medical image.",
+        "question_type": "yes_no_negative"
+    },
+    {
+        "question": "What anatomical structures can be identified in this scan?",
+        "answer": "The anatomical structures that can be identified in this scan are: {organ_list_comma_separated}.",
+        "question_type": "open"
+    },
+    {
+        "question": "Which anatomical structures are present in the image?",
+        "answer": "The anatomical structures present in the image include the {organ_list_comma_separated}.",
+        "question_type": "open"
+    },
+    {
+        "question": "Identify the anatomical structures in this image.",
+        "answer": "The following anatomical structures can be identified in this image:\n\n- {organ_list_bulleted}",
+        "question_type": "open"
+    },
+    {
+        "question": "Describe the visible anatomical structures in this image.",
+        "answer": "This image shows several visible anatomical structures, including: {organ_list_comma_separated}.",
+        "question_type": "open"
+    },
+    {
+        "question": "What organs or parts of the body are shown in this scan?",
+        "answer": "This scan shows the following organs and parts of the body:\n\n- {organ_list_bulleted}",
+        "question_type": "open"
+    }
+]

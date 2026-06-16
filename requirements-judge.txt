@@ -1,0 +1,22 @@
+# LLM-as-judge environment (SEPARATE from the main env).
+#
+# vLLM 0.9.2 and transformers 4.54.1 both register an `aimv2` config and crash when
+# imported together; the main env needs transformers>=4.54 (segmentation model), so the
+# judge must live in its own environment. The eval connects to it over HTTP
+# (radgrounder.llm_score.llm_score_server.LLMScoreServer), so nothing else is needed here.
+#
+# Setup:
+#   uv venv --python 3.10 .venv-judge
+#   uv pip install --python .venv-judge -r requirements-judge.txt
+#   source .venv-judge/bin/activate
+#   LLM_JUDGE_MODEL=google/gemma-3-27b-it bash radgrounder/llm_score/start_gemma3_server.sh
+vllm==0.10.0
+transformers==4.55.0
+# Pin the web stack to versions known to work with vLLM 0.10.0's OpenAI server.
+# Newer fastapi/starlette break prometheus-fastapi-instrumentator's route resolution
+# ('_IncludedRouter' object has no attribute 'path').
+fastapi==0.116.1
+starlette==0.47.2
+uvicorn==0.35.0
+prometheus-fastapi-instrumentator==7.1.0
+prometheus-client==0.22.1

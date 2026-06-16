@@ -1,0 +1,122 @@
+[
+    {
+        "question" : "Extent of pancreatitis, vascular erosion? Status of the truncus arteriosus?",
+        "canditate" : "The pancreatic parenchyma appears hypodense in the region of the pancreatic body and tail, with a maximum extent of 6. 5 × 3. 5 cm.",
+        "reference" : "Both adrenal glands are markedly infiltrated with multiple nodular lesions.",
+        "score" : 1
+    },
+    {
+        "question" : "Radiation planning for a para-aortic lymph node metastasis in the upper abdomen. Metastases?",
+        "canditate" : "Increased uptake in the right lower abdomen, attributable to a mesenteric lymph node.",
+        "reference" : "Isolated increased uptake in the area of the spine, e. g., lumbosacral junction, primarily associated with degenerative changes.",
+        "score" : 1
+    },
+    {
+        "question" : "Infiltrate? Effusion? Congestion?",
+        "canditate" : "Bilateral, predominantly basally accentuated, patchy ground-glass opacities with partially consolidating areas.",
+        "reference" : "Primary inflammatory consolidations apically in the right upper lobe.",
+        "score" : 1
+    },
+    {
+        "question" : "Exclusion of cardiac involvement and further organ manifestations.",
+        "canditate" : "Small round focus in the right upper lobe measuring 3 mm, primarily scar-like/postinflammatory.",
+        "reference" : "Small round opacities near the left fissure in the dorsal upper lobe and in the lower lobe.",
+        "score" : 1
+    },
+    {
+        "question" : "What is the primary finding in the right kidney?",
+        "canditate" : "Solid tumor mass in the right kidney, measuring 4.8 cm.",
+        "reference" : "Large, well-defined cyst in the right kidney, measuring 4.5 cm.",
+        "score" : 2
+    },
+    {
+        "question" : "Follow-up control after 3 administrations of Cemiplimab (PD-L1).",
+        "canditate" : "Pleura: Right pleural effusion with a rim width of 6. 5 cm.",
+        "reference" : "Right pleural carcinosis with trapped effusion right basally and nodular thickening, exemplified supradiaphragmatically measuring approximately 26 × 41 mm, with broad contact to the liver, infiltration possible.",
+        "score" : 2
+    },
+    {
+        "question" : "What are the findings in the left chest?",
+        "canditate" : "Moderate left-sided pleural effusion with passive atelectasis.",
+        "reference" : "Left lower lobe consolidation with air bronchograms, consistent with pneumonia.",
+        "score" : 2
+    },
+    {
+        "question" : "What are the findings in this scan?",
+        "canditate" : "Low-grade glioma in the left temporal lobe causing mild mass effect.",
+        "reference" : "Acute ischemic infarction in the left middle cerebral artery (MCA) territory with associated sulcal effacement.",
+        "score" : 2
+    },
+    {
+        "question" : "Follow-up/Control examination.",
+        "canditate" : "Right inguinal hernia with prolapsed small bowel loops without signs of incarceration",
+        "reference" : "Inguinal hernia with prolapse of the bladder trigone.",
+        "score" : 3
+    },
+    {
+        "question" : "Change in position?, Course Postoperative follow-up.",
+        "canditate" : "The tip of the screw inserted from the right protrudes approximately 2 mm beyond the ventral cortex of the dens axis.",
+        "reference" : "The fragment is grasped by the screw, with the screw tip protruding 6 mm beyond the odontoid tip.",
+        "score" : 3
+    },
+        {
+        "question" : "PD? Inflammation?",
+        "canditate" : "Soft tissue enlargement in the upper mediastinum, exemplified by a 15 × 10 mm lesion.",
+        "reference" : "Constant tissue increase in the right sternoclavicular joint, DD due to arthrosis.",
+        "score" : 3
+    },
+    {
+        "question" : "Pneumonia? Atypical infiltrates?",
+        "canditate" : "The tumor formation in the pancreatic head measures 4. 5 × 3. 5 cm axially and 4. 5 cm craniocaudally.",
+        "reference" : "In the pancreatic head, a hypodense 2. 2 × 1. 4 × 2. 4 cm mass is identified.",
+        "score" : 3
+    },    
+    {
+        "question" : "Ischemia? Bleeding?",
+        "canditate" : "Hypodense area in the right frontal region, most likely corresponding to a prior ischemic area.",
+        "reference" : "Postischemic substance defects in the right frontal lobe within the inferior frontal gyrus as well as in the right parietal lobe.",
+        "score" : 4
+    },
+    {
+        "question" : "Internal hernia?",
+        "canditate" : "Mesenteric lymph nodes, exemplified by a 1. 3 cm node.",
+        "reference" : "Nonspecific increased mesenteric lymph nodes, up to 10mm.",
+        "score" : 4
+    },
+    {
+        "question" : "What are the findings regarding the thyroid gland?",
+        "canditate" : "Enlarged thyroid gland with a dominant heterogeneous nodule in the left lobe measuring 2.4 cm.",
+        "reference" : "Thyromegaly with a 2.8 cm nodule in the left thyroid lobe.",
+        "score" : 4
+    },
+    {
+        "question" : "What is the cause of the patient's abdominal pain?",
+        "canditate" : "Inflammatory process in the right lower quadrant, consistent with acute appendicitis.",
+        "reference" : "Acute appendicitis with a dilated appendix measuring 11 mm and surrounding fat stranding.",
+        "score" : 4
+    },
+    {
+        "question" : "Cerebral metastases Follow-up",
+        "canditate" : "Abdomen: small hypodense liver lesion in segment II, primarily cystic.",
+        "reference" : "Abdomen: Visualization of the liver cyst in segment II.",
+        "score" : 5
+    },
+    {
+        "question" : "ICB?",
+        "canditate" : "Skull: Left frontal subgaleal hematoma with a width of up to 5 mm.",
+        "reference" : "Frontal left subgaleal hematoma with isolated small air inclusions.",
+        "score" : 5
+    },
+    {
+        "question" : "Staging.",
+        "canditate" : "Liver metastasis in segment II measuring 3. 2 x 2. 3 cm.",
+        "reference" : "Hypodense lesions subcapsular dorsally in segment II measuring 32 × 23 mm.",
+        "score" : 5
+    },
+    {
+        "question" : "Please stage after 2 cycles of systemic therapy",
+        "canditate" : "A subpleural nodule in the right upper lobe, measuring 4 mm.",
+        "reference" : "Stably sized subpleural nodule in the right upper lobe.",
+        "score" : 5
+    }
+]

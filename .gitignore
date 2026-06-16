@@ -1,0 +1,64 @@
+# Python
+__pycache__
+*.pyc
+*.egg-info
+dist
+build
+
+# uv / virtualenvs
+.venv
+.venv-*
+
+# Editor / OS
+.idea
+*.swp
+.DS_Store
+.ipynb_checkpoints
+
+# Logs
+*.log
+*.log.*
+slurm_logs/
+wandb
+
+# Model weights (staged locally; published separately — see README)
+models/
+
+# Datasets (download separately — see README + docs/DATASET_FORMAT.md)
+data/
+
+# Evaluation outputs / results (created at runtime)
+results/
+output
+output_images/
+detection_outputs/
+segmentation_outputs/
+
+# Data/artefact file types
+*.parquet
+*.npy
+*.nii
+*.nii.gz
+*.png
+*.jpg
+*.csv
+
+# Ignore stray JSON but keep the configs/prompts we ship
+*.json
+!radgrounder/llm_score/context_medical*.json
+!radgrounder/grounded_gemma/configs/*.json
+
+# Internal release-prep notes (contain private paths; not for public repo)
+PUBLISH.md
+REMAINING_STEPS.md
+!radgrounder/dataset/segmentation/label_map/*.json
+!radgrounder/dataset/segmentation/detect_vqa/*.json
+
+# Bundled VQA-RAD custom split (QA + open/closed labels; images downloaded separately)
+!data_splits/
+!data_splits/vqa_rad/*.json
+
+# Local-only env setter (private dataset paths; not for public repo)
+set_refrad2d_env.sh
+_MICCAI26__2D_Radiology_VLM.pdf
+VERIFY.md
