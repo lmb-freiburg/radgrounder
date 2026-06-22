@@ -14,10 +14,6 @@ This is the official code for *Scalable Training of Spatially Grounded 2D
 Vision–Language Models for Radiology* — the model is **RadGrounder** and the dataset is
 **RefRad2D** (subsets **RefRad2D-Grounded** and **RefRad2D-VQA**).
 
-> **Naming.** Earlier code/preprints used "FreiRad"/"FreiRadVLM"; these are now
-> **RefRad2D** (dataset) and **RadGrounder** (model). The Python package is `radgrounder`,
-> and the private-data env vars are `REFRAD2D_*`.
-
 ## How do I…?
 
 | Goal | Command / entry point |
