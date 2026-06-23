@@ -229,3 +229,20 @@ model is a research artifact and is **not** a medical device. Anyone intending
 to use RadGrounder in a commercial or clinical setting should independently
 verify all dataset, model, and regulatory requirements and obtain any required
 permissions.
+
+## Citation
+
+
+If you use this code, models, or results, please cite:
+
+```bibtex
+@inproceedings{salcanging2026radgrounder,
+  author    = {Yusuf Salcan and Simon Ging and Robin Schirrmeister and Philipp Arnold and Elmar Kotter and Behzad Bozorgtabar and Thomas Brox
+  title     = {Scalable Training of Spatially Grounded 2{D} Vision--Language Models for Radiology},
+  booktitle = {Medical Image Computing and Computer Assisted Intervention -- {MICCAI} 2026},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer},
+  year      = {2026},
+  note      = {To appear}
+}
+
