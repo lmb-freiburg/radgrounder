@@ -2725,7 +2725,7 @@ dependencies = [
     { name = "tqdm" },
     { name = "transformers" },
     { name = "trl" },
-    { name = "visiontext" },
+    { name = "visiontext", specifier = "<1" },
     { name = "wandb" },
     { name = "xformers" },
     { name = "xmltodict" },
