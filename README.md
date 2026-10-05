@@ -1,5 +1,9 @@
 # RadGrounder
 
+<a href="https://github.com/lmb-freiburg/radgrounder/actions/workflows/build-py310.yml">
+  <img alt="build 3.10 status" title="build 3.10 status" src="https://img.shields.io/github/actions/workflow/status/lmb-freiburg/radgrounder/build-py310.yml?branch=main&label=build%203.10" />
+</a>
+
 A medical vision-language model for radiology, built on **PaliGemma-2 (3B)**. It
 generates radiology **reports**, answers **visual questions** (open/closed), and
 produces **grounded** outputs — bounding-box **detection** and **segmentation**

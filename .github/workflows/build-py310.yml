@@ -1,0 +1,61 @@
+name: build for python 3.10
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+#
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: true  # ovqa is installed from the submodule
+#
+    - name: Setup uv
+      uses: astral-sh/setup-uv@v6
+      with:
+        python-version: "3.10"
+        enable-cache: true
+        cache-dependency-glob: |
+          pyproject.toml
+          uv.lock
+#
+    - name: Install code
+      run: |
+        uv sync --locked
+#
+    - name: Pip list
+      run: uv pip list --python .venv
+#
+    - name: Import entry points
+      run: |
+        # the grounded_gemma scripts import their sibling modules by bare name
+        export PYTHONPATH="$PWD/radgrounder/grounded_gemma"
+        for m in \
+            radgrounder.grounded_gemma.train_groundedgemma \
+            radgrounder.grounded_gemma.train_detectgemma \
+            radgrounder.grounded_gemma.eval_groundedgemma \
+            radgrounder.grounded_gemma.eval_detectgemma \
+            radgrounder.llm_score.llm_score_server; do
+          echo "import $m"
+          .venv/bin/python -c "import $m"
+        done
+#
+    - name: Run pylint
+      continue-on-error: true
+      run: |
+        uv pip install --python .venv pylint
+        .venv/bin/pylint --recursive=y radgrounder
+        .venv/bin/pylint --recursive=y tools
+#
