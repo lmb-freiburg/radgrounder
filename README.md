@@ -237,12 +237,15 @@ If you use this code, models, or results, please cite:
 
 ```bibtex
 @inproceedings{salcanging2026radgrounder,
-  author    = {Yusuf Salcan and Simon Ging and Robin Schirrmeister and Philipp Arnold and Elmar Kotter and Behzad Bozorgtabar and Thomas Brox
+  author    = {Yusuf Salcan and Simon Ging and Robin Tibor Schirrmeister and Philipp Arnold and Elmar Kotter and Behzad Bozorgtabar and Thomas Brox},
   title     = {Scalable Training of Spatially Grounded 2{D} Vision--Language Models for Radiology},
   booktitle = {Medical Image Computing and Computer Assisted Intervention -- {MICCAI} 2026},
   series    = {Lecture Notes in Computer Science},
-  publisher = {Springer},
+  volume    = {16878},
+  publisher = {Springer Nature Switzerland},
   year      = {2026},
-  note      = {To appear}
+  month     = {September},
+  doi       = {10.1007/978-3-032-38059-3_53},
+  url       = {https://papers.miccai.org/miccai-2026/0923-Paper4764.html}
 }
-
+```
