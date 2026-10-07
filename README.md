@@ -1,3 +1,12 @@
+<div align="center">
+<a href="https://radgrounder.github.io">Project Page</a> —
+<a href="https://papers.miccai.org/miccai-2026/paper/4764_paper.pdf">Paper</a> —
+<a href="https://arxiv.org/abs/2606.20477">arXiv</a> —
+<a href="https://github.com/lmb-freiburg/radgrounder">Code</a> —
+<a href="https://huggingface.co/lmb-freiburg/radgrounder">Models</a> —
+<a href="https://radgrounder.github.io/radgrounder_poster.pdf">Poster</a>
+</div>
+
 # RadGrounder
 
 <a href="https://github.com/lmb-freiburg/radgrounder/actions/workflows/build-py310.yml">
