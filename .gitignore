@@ -42,6 +42,7 @@ segmentation_outputs/
 *.png
 *.jpg
 *.csv
+!assets/*.png
 
 # Ignore stray JSON but keep the configs/prompts we ship
 *.json
