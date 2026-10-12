@@ -258,6 +258,7 @@ If you use this code, models, or results, please cite:
   booktitle = {Medical Image Computing and Computer Assisted Intervention -- {MICCAI} 2026},
   series    = {Lecture Notes in Computer Science},
   volume    = {16878},
+  pages     = {558--568},
   publisher = {Springer Nature Switzerland},
   year      = {2026},
   month     = {September},
